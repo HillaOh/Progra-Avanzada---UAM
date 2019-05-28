@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Ejercicio 9 </title>
+</head>
+
+<body>    
+    Palabra: <input type="text" id="palabra"/>
+    <br/>
+    <input type="submit" value="Verificar" onclick="palindromo()" />
+    <br/>
+    <br/>    
+
+    <div id="informacion"></div>
+
+    <script type="text/javascript">
+      function palindromo(){
+        var reverso = "";
+        var param = document.getElementById("palabra").value;
+        var i = param.length;
+
+        for (var x = i; x >= 0; x--) {
+            reverso = reverso + param.charAt(x);
+        }
+
+        if(param == reverso){
+            document.write(reverso + " es palindromo");
+        }else{
+            document.write(reverso + " no es palindromo");
+        }
+
+      }
+
+    </script>
+
+</body>
+
+</html>

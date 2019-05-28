@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Ejercicio 11 </title>
+</head>
+
+<body>
+    <br/>    
+    Primer Numero: <input type="text" id="num1"/>
+    <br/>
+    <br/>
+    Segundo Numero: <input type="text" id="num2"/>
+    <br/>
+    <br/>
+    <button onclick="ejecutarAJAX()">Calcular Operaciones</button>
+    <br/>
+    <br/>
+    
+
+    <div id="informacion"></div>
+
+    <script type="text/javascript">
+      var resultado = document.getElementById("informacion");
+
+      function ejecutarAJAX(){
+        var xmlhttp;
+
+        if (window.XMLHttpRequest) {
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        var n1 = document.getElementById("num1").value;
+        var n2 = document.getElementById("num2").value;
+
+        var cadena = "numero1=" + n1 + "&numero2=" + n2;
+
+        xmlhttp.onreadystatechange = function(){
+
+          if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+            resultado.innerHTML = xmlhttp.responseText;
+          }
+        }
+
+        xmlhttp.open("GET", "Calculadora.php?" +cadena, true);
+        xmlhttp.send();
+      }
+    </script>
+
+</body>
+
+</html>

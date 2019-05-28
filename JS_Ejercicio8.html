@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Ejercicio 8 </title>
+</head>
+
+<body>    
+    Palabra: <input type="text" id="palabra"/>
+    <br/>
+    <input type="submit" value="Verificar" onclick="ValidarPalabra()" />
+    <br/>
+    <br/>    
+
+    <div id="informacion"></div>
+
+    <script type="text/javascript">
+
+      function ValidarPalabra(){
+        var cadena = document.getElementById("palabra").value;
+        
+        if(cadena == cadena.toUpperCase()){
+            document.write(cadena + " esta formada por mayusculas");
+        }else if (cadena == cadena.toLowerCase()){
+            document.write(cadena + " esta formada por minusculas");
+        }else{
+            document.write(cadena + " esta formada por mayusculas y minusculas");
+        }
+
+      }
+
+    </script>
+
+</body>
+
+</html>
