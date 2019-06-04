@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Calcu AJAX </title>
+    
+</head>
+
+<body>
+    <form>
+        <div align="center">
+            <h2>C A L C U L A D O R A</h2>
+            Primer número: <input type="number" id="txt_n1" placeholder="Primer numero" style=" width: 180px; height: 35px">
+            <br/>
+            <br/>
+            Segundo número: <input type="number" id="txt_n2" placeholder="Segundo numero" style=" width: 180px; height: 35px">
+            <br/>
+            <br/>
+            <table align="center">
+                <tr>
+                    <td
+                    ><input type="button" value="+" onclick="signo('sumar')" style=" width: 40px; height: 40px">
+                    </td>
+                    <td>
+                        <input type="button" value="- " onclick="signo('restar')" style=" width: 40px; height: 40px">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="x" onclick="signo('multiplicar')" style=" width: 40px; height: 40px"></td>
+                    <td>
+                        <input type="button" value="/ " onclick="signo('dividir')" style=" width: 40px; height: 40px">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="=" onclick="EjecutarAjax()" style=" width: 80px; height: 40px">
+                    </td>
+                </tr>
+            </table>            
+        </div>
+    </form>
+
+    <div id="informacion"></div>
+    <script type="text/javascript">
+        var operador = "";
+        var resultado = document.getElementById("informacion");
+
+        function signo(signooperacion){
+            switch(signooperacion){
+                case 'sumar':
+                operador = "sumar";
+                break;
+                case 'restar':
+                operador = "restar";
+                break;
+                case 'multiplicar':
+                operador = "multiplicar";
+                break;
+                case 'dividir':
+                operador = "dividir";
+                break;
+            }
+       }
+
+        function EjecutarAjax(){
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+              xmlhttp = new XMLHttpRequest();
+            } else {
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            var num1 = document.getElementById("txt_n1").value;
+            var num2 = document.getElementById("txt_n2").value;
+
+            var cadena = "numero1=" + num1 + "&numero2=" + num2 + "&signooperador=" + operador;
+
+            xmlhttp.onreadystatechange = function(){
+                  if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    resultado.innerHTML = xmlhttp.responseText;
+                  }
+                }
+
+            xmlhttp.open("GET", "Calcut2.php?" +cadena, true);
+            xmlhttp.send();
+
+        }
+
+
+    </script>
+</body>
+
+</html>
