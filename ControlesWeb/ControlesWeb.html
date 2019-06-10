@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Controles Web</title>
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="fonts.css">
+
+</head>
+<body>
+	<br/>
+	<h1 align="center" style="color: #FA5858">Controles Web</h1>
+	
+	<div class="main">
+
+		<div class="AutoCompletado-PopUp">
+			<br/>Busca un pais:
+			<input type="text" name="buscar" id="buscar" list="lsDatos1">
+
+			<datalist id="lsDatos1">
+				<option value="Arabia Saudita">
+				<option value="Argentina">
+				<option value="Brasil">
+				<option value="Belice">
+				<option value="Canada">
+				<option value="Camerun">
+				<option value="Dinamarca">
+				<option value="Egipto">
+				<option value="Estados Unidos">
+				<option value="Fiyi">
+				<option value="Haiti">
+				<option value="Hungria">
+				<option value="India">
+				<option value="Jordania">		
+				<option value="Kosovo">			<option value="Kuwait">
+				<option value="Luxemburgo">
+				<option value="Marruecos">
+				<option value="Noruega">
+				<option value="Oman">
+				<option value="Qatar">
+				<option value="Turquia">
+				<option value="Zambia">
+			</datalist>
+			<br/><br/>
+
+			Si no encuentras el pais deseado haz click sobre el PopUp para buscarlo
+			<a href="https://www.google.com/">Haz Click Aqui</a>
+		</div>
+		<div class="slides">
+			<img src="img/1.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/3.jpg" alt="">
+			<img src="img/4.jpg" alt="">		
+			<img src="img/5.jpg" alt="">
+		</div>
+		<div class="DatePicker">
+			<br/>
+			Selecciona una fecha en el DatePicker:
+			<br/>
+			<input type="date" id="fecha" data-date-format="dd-mm-yyyy">
+
+		</div>
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.slides.js"></script>
+
+	<script>
+		$(function(){
+      $(".slides").slidesjs({
+        play: {
+      active: true,
+      effect: "slide",
+      interval: 2800,
+      auto: true,
+      swap: true,
+      pauseOnHover: true,
+      restartDelay: 2500
+    }
+      });
+    });
+	</script>
+</body>
+</html>

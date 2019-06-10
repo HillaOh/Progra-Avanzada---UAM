@@ -1,0 +1,70 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #F8E0F7;	
+}
+
+.main{
+	width: 100%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+.AutoCompletado-PopUp, .DatePicker{
+		width: 320px;
+		height: 108px;
+		background: #F5A9A9;
+		border: 2px solid #CCC;
+		margin: 10% auto;
+		color:#0B0B61;
+		text-align: center; 
+		text-decoration: none;
+		display: block;
+		box-shadow: 3px 3px 7px 0px #0b0b6175;
+}
+
+.DatePicker > input{
+	float: center;
+}
+
+.slides{
+	width: 100%;
+}
+
+.slides img{
+	width: 100%;
+}
+
+.slidesjs-pagination {
+	background: #F79F81;
+	list-style: none;
+	overflow: hidden;	
+}
+
+.slidesjs-pagination li {
+	float: left;
+}
+
+.slidesjs-pagination li a{
+	display: block;
+	padding: 10px 20px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.slidesjs-pagination li a:hover{
+	background: #FA5858;
+}
+
+.slidesjs-navigation {
+	background: #FA5858;
+	color: #ffffff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 11px 20px;
+	float: right;
+}
+
