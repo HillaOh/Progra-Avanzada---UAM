@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Validaciones</title>	
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+	<form class="formulario">
+		<br/>
+		Nombre de Usuario: <input type="text" id="txt_usuario">
+		<br/>
+		Contraseña: <input type="password" id="txt_password">
+		<br/>
+		Email: <input type="email" id="txt_email">
+		<br/>
+		Fecha Namiento: <input type="date" id="dt_fecha" data-date-format="dd/mm/yyyy">
+		<br/>
+		<input type="button" id="enviar" onclick="EjecutarAjax()" value="Enviar Datos">
+		
+
+
+	</form>
+	<script type="text/javascript">
+		
+		function EjecutarAjax(){
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+              xmlhttp = new XMLHttpRequest();
+            } else {
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            var usuario = document.getElementById("txt_usuario").value;
+            var password = document.getElementById("txt_password").value;
+            var email = document.getElementById("txt_email").value;
+			var fecha = document.getElementById("dt_fecha").value;
+            
+        
+            var cadena = "usuarioA=" + usuario + "&passwordA=" + password + "&emailA=" + email + "&fechaA=" + fecha;
+            document.write(cadena);
+            xmlhttp.onreadystatechange = function(){
+                  if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    resultado.innerHTML = xmlhttp.responseText;
+                  }
+                }
+
+            xmlhttp.open("GET", "Validaciones.php?" +cadena, true);
+            xmlhttp.send();
+
+        }
+
+	</script>
+		
+
+
+	
+</body>
+</html>
