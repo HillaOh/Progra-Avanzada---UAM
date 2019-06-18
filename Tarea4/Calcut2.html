@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Calcu AJAX </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        body{background: #F8E0F7;}
+        .tabla{margin: 10px auto; padding: 20px;}
+        #txt_n1, #txt_n2{margin: 8px; padding: 8px; width: 108px; height: 18px;}
+    </style>
+
+    <script>
+
+        var sig = '';
+
+        $(document).ready(function(){
+            $("#btn_resultado").click(function(evento){evento.preventDefault();
+                $("#informacion").load("Calcut2.php", {numero1: document.getElementById("txt_n1").value, numero2: document.getElementById("txt_n2").value, sig}, function(){
+                    alert("Los datos han sido enviados por ajax, presione aceptar para ver el resultado");});
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form id="calculadora">
+        <div align="center">
+            <h2 style="color: #0B0B61">C A L C U L A D O R A</h2>
+            Primer número: <input type="number" id="txt_n1" name="N1" placeholder="Primer numero" style=" width: 180px; height: 35px">
+            <br/>
+            <br/>
+            Segundo número: <input type="number" id="txt_n2" name="N2" placeholder="Segundo numero" style=" width: 180px; height: 35px">
+            <table class="tabla" >
+                <tr>
+                    <td
+                    ><input type="button" id="btn_+" value="+" onclick="signo('sumar')" style=" width: 40px; height: 40px">
+                    </td>
+                    <td>
+                        <input type="button" id="btn_-" value="-" onclick="signo('restar')" style=" width: 40px; height: 40px">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="btn_x" value="*" onclick="signo('multiplicar')" style=" width: 40px; height: 40px"></td>
+                    <td>
+                        <input type="button" id="btn_/" value="/" onclick="signo('dividir')" style=" width: 40px; height: 40px">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="=" id="btn_resultado" name="btn_resultado" style=" width: 80px; height: 40px">
+                    </td>
+                </tr>
+            </table>            
+        </div>        
+    </form>
+
+    <div id="informacion" align="center"> </div>
+
+    <script type="text/javascript">
+
+        var resultado = document.getElementById("informacion");
+
+        function signo(signooperacion){
+
+            sig = signooperacion;            
+       }
+
+    </script>
+ </body>
+</html>
