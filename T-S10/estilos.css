@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #A9F5E1;	
+}
+
+.formLibreria{
+	width: 100%;
+	text-align: center;
+	padding: 10px 20px;
+	max-width: 900px;
+	margin: 15px auto;
+}
+
+.datosLibs{
+	width: 450px;
+	height: 337px;
+	background: #01DFA5;
+	border: 2px solid #CCC;
+	padding: 18px;
+	margin: 5% auto;
+	color:#0B3B2E;
+	text-align: center; 
+	text-decoration: none;
+	display: block;
+	box-shadow: 3px 3px 7px 0px #0b0b6175;
+}
+
+.login{
+	width: 450px;
+	height: 237px;
+	background: #01DFA5;
+	border: 2px solid #CCC;
+	padding: 18px;
+	margin: 5% auto;
+	color:#0B3B2E;
+	text-align: center; 
+	text-decoration: none;
+	display: block;
+	box-shadow: 3px 3px 7px 0px #0b0b6175;
+}
+
+.main{
+	width: 450px;
+	height: 337px;
+	padding: 18px;
+	margin: 5% auto;
+	text-align: center; 
+	text-decoration: none;
+	display: block;
+}
+
+.main > a {
+	color:#0B3B2E;
+	font-size: x-large;
+	display: inline-block;
+	margin: 3% auto;
+}
+
+.datosLibs > input {
+	float: center;
+}
+
+h1{
+	text-align: center;
+	color: #0B3B2E;
+	margin: 2% auto;
+}
+
+#txt_titulo, #txt_autor, #cmb_editorial,
+#txt_precio{
+	width: 188px;
+	height: 30px;
+	margin: 2px;
+	float: center;
+}
+
+ #btn_nuevo, #btn_actualizar,
+ #btn_eliminar, #btn_regresar{
+	width: 98px;
+	height: 50px;
+	margin: 4% auto;
+	color:#FFFFFF;
+	background-color: #0B3B2E;
+	display: inline-block;
+}
