@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Registro Clientes</title>
+	<link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn_nuevo").click(function(evento){evento.preventDefault();
+                $("#informacion").load("cliente.php", {nombre: document.getElementById("txt_nombre").value, cedula: document.getElementById("txt_cedula").value, telefono: document.getElementById("txt_telefono").value, correo: document.getElementById("txt_correo").value, direccion: document.getElementById("txt_direccion").value, provincia: document.getElementById("txt_provincia").value, canton: document.getElementById("txt_canton").value, distrito: document.getElementById("txt_distrito").value, boton: "nuevoCliente"}, function(){alert("Los datos han sido guardados correctamente");
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn_eliminar").click(function(evento){evento.preventDefault();
+                $("#informacion").load("cliente.php", {nombre: document.getElementById("txt_nombre").value, cedula: document.getElementById("txt_cedula").value, telefono: document.getElementById("txt_telefono").value, correo: document.getElementById("txt_correo").value, direccion: document.getElementById("txt_direccion").value, provincia: document.getElementById("txt_provincia").value, canton: document.getElementById("txt_canton").value, distrito: document.getElementById("txt_distrito").value, boton: "eliminarCliente"}, function(){alert("Los datos han sido eliminados correctamente");
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn_actualizar").click(function(evento){evento.preventDefault();
+                $("#informacion").load("cliente.php", {nombre: document.getElementById("txt_nombre").value, cedula: document.getElementById("txt_cedula").value, telefono: document.getElementById("txt_telefono").value, correo: document.getElementById("txt_correo").value, direccion: document.getElementById("txt_direccion").value, provincia: document.getElementById("txt_provincia").value, canton: document.getElementById("txt_canton").value, distrito: document.getElementById("txt_distrito").value, boton: "actualizarCliente"}, function(){alert("Los datos han sido actualizados correctamente");
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+	<form class="form_crudClientes" id="form_crudClientes">
+
+		<h1 style="color: #0B0B61" align="center">Restaurante Mi Angora</h1>
+
+		<div class="datosClientes">
+			Nombre Completo: <input type="text" id="txt_nombre" placeholder="Nombre Completo" required> </br>
+			Cédula de identidad: <input type="number" id="txt_cedula" placeholder="Cédula Nacional" required> </br>
+			Telefono: <input type="tel" id="txt_telefono" placeholder="Telefono"> </br>
+			Correo electrónico: <input type="email" id="txt_correo" placeholder="Correo" required> </br>
+			Dirección exacta: <input type="text" id="txt_direccion" placeholder="Dirección exacta"></br>			
+			Provincia: <input type="text" id="txt_provincia" placeholder="Provincia" required></br>
+			Cantón: <input type="text" id="txt_canton" placeholder="Cantón" required></br>
+			Distrito: <input type="text" id="txt_distrito" placeholder="Distrito" required></br>
+			<input type="button" id="btn_nuevo" onclick="" value="Nuevo">
+            <input type="button" id="btn_actualizar" onclick="" value="Actualizar">
+			<input type="button" id="btn_eliminar" onclick="" value="Eliminar">
+			<a href="1PaginaInicio.html"><input type="button" id="btn_Regresar" value="Volver a Inicio"></a>
+		</div>
+        <div id="informacion"></div>    
+    </form>    
+</body>
+</html>

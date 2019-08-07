@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ordenes</title>
+	<link rel="stylesheet" href="estilos.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn_guardar").click(function(evento){evento.preventDefault();
+                $("#informacion").load("orden.php", {idOrden: document.getElementById("txt_idOrden").value, fecha: document.getElementById("dt_fecha").value, hora: document.getElementById("ti_hora").value, mesa: document.getElementById("txt_mesa").value, cliente: document.getElementById("txt_cliente").value, platillos: document.getElementById("txt_platillo").value, estado: document.getElementById("lst_estado").value, boton: "guardarOrden"}, function(){alert("Los datos han sido guardados correctamente");
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn_eliminar").click(function(evento){evento.preventDefault();
+                $("#informacion").load("orden.php", {idOrden: document.getElementById("txt_idOrden").value, fecha: document.getElementById("dt_fecha").value, hora: document.getElementById("ti_hora").value, mesa: document.getElementById("txt_mesa").value, cliente: document.getElementById("txt_cliente").value, platillos: document.getElementById("txt_platillo").value, estado: document.getElementById("lst_estado").value, boton: "eliminarOrden"}, function(){alert("Los datos han sido elimados correctamente");
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn_actualizar").click(function(evento){evento.preventDefault();
+                $("#informacion").load("orden.php", {idOrden: document.getElementById("txt_idOrden").value, fecha: document.getElementById("dt_fecha").value, hora: document.getElementById("ti_hora").value, mesa: document.getElementById("txt_mesa").value, cliente: document.getElementById("txt_cliente").value, platillos: document.getElementById("txt_platillo").value, estado: document.getElementById("lst_estado").value, boton: "actualizarOrden"}, function(){alert("Los datos han sido actualizados correctamente");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+	<form class="form_crudOrdenes"  id="form_crudOrdenes">
+		<h1 style="color: #0B0B61" align="center">Restaurante Mi Angora</h1>
+
+		<div class="datosOrdenes">
+			Numero de Orden: <input type="text" id="txt_idOrden"> </br>
+			Fecha: <input type="date" id="dt_fecha" data-date-format="dd-mm-yyyy"></br>
+			Hora: <input type="time" id="ti_hora"> </br>
+			Numero de Mesa: <input type="text" id="txt_mesa"> </br>
+			Cliente: <input type="text" id="txt_cliente" placeholder="Nombre Completo de Cliente"></br>
+			Platillos: <input type="text" id="txt_platillo" placeholder="platillos"></br>
+			Estado: <input type="text" id="lst_estado" placeholder="seleccione" list="lsEstados">
+			<datalist id="lsEstados">
+				<option value="P">
+				<option value="R">
+				<option value="C">
+				<option value="L">
+				<option value="E">	
+			</datalist></br>
+			<input type="button" id="btn_nuevo" onclick="" value="Nuevo">
+			<input type="button" id="btn_actualizar" onclick="" value="Actualizar">
+			<input type="button" id="btn_eliminar" onclick="" value="Eliminar">
+			<a href="1PaginaInicio.html"><input type="button" id="btn_Regresar" value="Volver a Inicio"></a>
+		</div>		
+        <div id="informacion"></div>
+	</form>
+</body>
+</html>
